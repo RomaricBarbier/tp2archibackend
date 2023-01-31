@@ -10,7 +10,7 @@ ALTER TABLE Country ALTER COLUMN id RESTART WITH 4;
 
 -- On peut utiliser des sous-requêtes pour récupérer
 -- la clé étrangère de la table Country
-INSERT INTO CITY(name, population, country_id) VALUES
+INSERT INTO CITY(name,population,country_id) VALUES
     ('Paris', 12, SELECT id FROM Country WHERE code = 'FR'),
     ('London', 18, SELECT id FROM Country WHERE code = 'UK'),
     ('New York', 27, SELECT id FROM Country WHERE code = 'US');
